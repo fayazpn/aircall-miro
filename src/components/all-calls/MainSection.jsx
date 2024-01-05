@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGetActivities } from '../../hooks/hooks.js';
 import FallbackLoading from '../loading/FallbackLoading.jsx';
+import Empty from '../shared/Empty.jsx';
 import Error from '../shared/Error.jsx';
 import MemoizedCallCard from './CallCard.jsx';
 
@@ -13,6 +14,10 @@ const MainSection = () => {
 
   if (isLoading) {
     return <FallbackLoading />;
+  }
+
+  if (activities.length === 0) {
+    return <Empty />;
   }
 
   return (
