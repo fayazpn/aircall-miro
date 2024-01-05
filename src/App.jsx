@@ -1,20 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import { Helmet } from 'react-helmet';
+import { BrowserRouter } from 'react-router-dom';
 
-import Header from './Header.jsx';
+import Header from './components/shared/Header.jsx';
 
 const App = () => {
-  console.log(process.env.BASE_API_URL);
   return (
-    <div className="container">
-      <Header />
-      <div className="container-view">
-        Some activities should be here
+    <React.Fragment>
+      <Helmet>Air Call</Helmet>
+      <div className="container">
+        <Header />
+        <div className="container-view"></div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.createRoot(document.getElementById('app')).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
 
 export default App;
