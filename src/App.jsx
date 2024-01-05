@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom/client';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
 
-import Header from './components/shared/Header.jsx';
+import AppRouter from './AppRouter.jsx';
 
 const App = () => {
   return (
     <React.Fragment>
       <Helmet>Air Call</Helmet>
-      <div className="container">
+      {/* <div className="container">
         <Header />
-        <div className="container-view"></div>
-      </div>
+        <div className="container-view">
+          <FallbackLoading />
+        </div>
+      </div> */}
+      <AppRouter />
     </React.Fragment>
   );
 };
