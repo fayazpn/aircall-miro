@@ -1,5 +1,5 @@
 import React from 'react';
-import CallCard from './CallCard';
+import CallCard from './CallCard.jsx';
 
 const MainSection = () => {
   return (

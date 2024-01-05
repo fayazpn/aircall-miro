@@ -1,7 +1,8 @@
 import React from 'react';
+import MainSection from '../components/all-calls/MainSection.jsx';
 
 const AllCalls = () => {
-  return <div>AllCalls</div>;
+  return <MainSection />;
 };
 
 export default AllCalls;
