@@ -2,7 +2,7 @@ import { Stack, Typography } from '@mui/material';
 
 import { secondsToMinutes } from 'date-fns';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { memo } from 'react';
 import { FiPhoneIncoming, FiPhoneOutgoing } from 'react-icons/fi';
 import {
   LuPhoneCall,
@@ -92,4 +92,6 @@ CallCard.propTypes = {
   via: PropTypes.number,
 };
 
-export default CallCard;
+const MemoizedCallCard = memo(CallCard);
+
+export default MemoizedCallCard;

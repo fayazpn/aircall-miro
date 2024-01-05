@@ -9,12 +9,6 @@ const App = () => {
   return (
     <React.Fragment>
       <Helmet>Air Call</Helmet>
-      {/* <div className="container">
-        <Header />
-        <div className="container-view">
-          <FallbackLoading />
-        </div>
-      </div> */}
       <AppRouter />
     </React.Fragment>
   );
