@@ -1,16 +1,26 @@
-import React, { useEffect } from 'react';
-import { getActivities } from '../../api/callAPI.js';
+import React from 'react';
+import { useGetActivities } from '../../hooks/hooks.js';
+import FallbackLoading from '../loading/FallbackLoading.jsx';
+import Error from '../shared/Error.jsx';
 import CallCard from './CallCard.jsx';
 
 const MainSection = () => {
-  useEffect(() => {
-    const posts = getActivities();
-    console.log(posts);
-  }, []);
+  const { activities, isLoading, isError } = useGetActivities();
+
+  if (isError) {
+    return <Error />;
+  }
+
+  if (isLoading) {
+    return <FallbackLoading />;
+  }
+
   return (
-    <div>
-      <CallCard />
-    </div>
+    <React.Fragment>
+      {activities.map((activity) => (
+        <CallCard key={activity.id} {...activity} />
+      ))}
+    </React.Fragment>
   );
 };
 
