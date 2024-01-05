@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Header from './Header.jsx';
 
 const App = () => {
-  console.log(process.env.BASE_API_URL);
+  // console.log(process.env.BASE_API_URL);
   return (
     <div className="container">
       <Header />
