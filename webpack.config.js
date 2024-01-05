@@ -1,4 +1,3 @@
-/* eslint-disable */
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
@@ -35,5 +34,8 @@ module.exports = () => {
       }),
       new Dotenv(),
     ],
+    resolve: {
+      extensions: ['.js', '.jsx'], // Add this line to resolve .jsx files
+    },
   };
 };

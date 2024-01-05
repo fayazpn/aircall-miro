@@ -4,3 +4,5 @@ export const ROUTE_CONSTANTS = {
   CALL_DETAILS: '/call-details/:callerId',
   ARCHIVED_CALLS: '/archived-calls',
 };
+
+export const BASE_URL = process.env.BASE_API_URL;
